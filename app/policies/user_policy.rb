@@ -1,4 +1,4 @@
-class UserPolicy
+class UserPolicy < ApplicationPolicy
     attr_reader :current_user, :model
   
     def initialize(current_user, model)
@@ -23,4 +23,14 @@ class UserPolicy
       @current_user.admin?
     end
   
+    class Scope < Scope
+        def resolve
+          if current_user.admin?
+            scope.all
+          else
+            scope.where(user: current_user)
+          end
+        end
+    end
+
 end

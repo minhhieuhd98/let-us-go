@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  accompanied_number: 
+  user: one
+  event: one
+
+two:
+  accompanied_number: 
+  user: two
+  event: two
