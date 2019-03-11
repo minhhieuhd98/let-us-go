@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @events = Event.where(hidden_status: false) # sử dụng scope
+    @events = Event.by_hidden_status() # sử dụng scope
   end
 end
