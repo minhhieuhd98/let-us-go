@@ -30,6 +30,10 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 # Use Pundit
 gem 'pundit'
+# Use Bootstrap 4
+gem 'bootstrap', '~> 4.3.1'
+# Use jQuery
+gem 'jquery-rails'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
