@@ -6,4 +6,5 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(name: "Admin", address: "Shinagawa-ku, Tokyo", gender: "male", phone: "12345678", email: "admin@email.com", password: "123456", role: "admin")
+User.create(name: "Admin", address: "Shinagawa-ku, Tokyo", gender: "LBGT", phone: "12345678", email: "admin@email.com", password: "123456", role: "admin")
+Event.create(name: "Published Devil May Cry V", description: "The newest in DMC series", place: "USA", start: Time.now, end: Time.now, hidden_status: false)
