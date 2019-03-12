@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    authorize User
+    authorize @user
   end
 
   # GET /users/new
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    authorize User
+    authorize @user
   end
 
   # POST /users
