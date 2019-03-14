@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :calendar, :destroy]
   before_action :authenticate_user!
   after_action :verify_authorized
 
@@ -24,6 +24,10 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+    authorize @user
+  end
+
+  def calendar
     authorize @user
   end
 
