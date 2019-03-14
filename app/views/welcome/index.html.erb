@@ -3,22 +3,7 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-md-2">
-      <ul class="nav nav-pills flex-column">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Places</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Events</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Top</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Q&A</a>
-        </li>
-      </ul>
-    </div>
+    <%= render('layouts/sidenav') %>
 
     <div class="col-md-7">
       <% @events.each do |event| %>
@@ -44,12 +29,7 @@
     </div>
 
     <div class="col-md-3">
-      <div class="card">
-        <div class="card-header">
-          Advertisement
-        </div>
-        <%= link_to image_tag("LuPat.jpg", :alt => "Advertisement", :width => "100%"), "https://www.toei.co.jp/tv/lupin-vs-pat/", :target => "_blank"%>
-      </div>
+      <%= render('layouts/advertisement') %>
 
       <div class="card mt-2">
         <div class="card-header">
