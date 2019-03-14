@@ -1,3 +1,21 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.container-fluid{
+    padding-left: 0px;
+    padding-right: 0px;
+}
+.jumbotron{
+    background-image:image-url('homepage-picture.png');
+    background-position: 0% 65%;
+    background-size: cover;
+    border-radius: 0px !important;
+    color:#fff;
+}
+.events-list-picture {
+    max-width: 100%;
+    max-height:100%;
+}
+.first-picture {
+    height: 150px;
+}
