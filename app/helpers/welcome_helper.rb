@@ -1,5 +1,5 @@
 module WelcomeHelper
-    # def index
-    #   @events = Event.where(hidden_status: false)
-    # end
+    def time_format(time)
+        time.strftime("%H:%M %Y/%m/%d")
+    end
 end

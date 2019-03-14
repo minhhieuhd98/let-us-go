@@ -2,7 +2,13 @@
 @import "bootstrap";
 @import "navigation";
 @import "footer";
+@import "welcome";
 
 .body{
     min-height: 1000px;
+}
+
+.card-header{
+    background-color: $bgDefault;
+    color: $colDefault;
 }
