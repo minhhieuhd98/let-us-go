@@ -45,12 +45,8 @@
           </div>
         <% end %>
 
-        <% @comments.each do |comment| %>
-          <div class="row">
-            <div class="col-md-1"><%= comment.user.name %></div>
-            <div class="col-md-6"><%= comment.content %></div>
-          </div>
-        <% end %>
+        
+        <%= render partial: "comments/index",  collection: @event.comments, as: "comment" %>
         <%= link_to 'Join', "javascript.void(0)", :class => "btn btn-primary" %> 
       <% end %>
 
