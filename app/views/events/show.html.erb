@@ -1,29 +1,63 @@
-<p id="notice"><%= notice %></p>
+<div class="container mt-5">  
+  <div class="row">
+    <div class="col-md-9">
+      <p id="notice"><%= notice %></p>
+      <div class="row">
+        <div class="col-md-6 image-slide-size">
+          <%= image_tag("events/"<< @event.pictures, :alt => "Event picture", :class => "events-list-picture")%>
+        </div>
+        <div class="col-md-6">
+          <p><%= @event.name %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @event.name %>
-</p>
+          <p>
+            <strong>Place:</strong>
+            <%= @event.place %>
+          </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
+          <p>
+            <strong>Start:</strong>
+            <%= @event.start %>
+          </p>
 
-<p>
-  <strong>Place:</strong>
-  <%= @event.place %>
-</p>
+          <p>
+            <strong>End:</strong>
+            <%= @event.end %>
+          </p>
+        </div>
+      </div>
 
-<p>
-  <strong>Start:</strong>
-  <%= @event.start %>
-</p>
+      <p>
+        <strong>Description:</strong>
+        <%= @event.description %>
+      </p>
 
-<p>
-  <strong>End:</strong>
-  <%= @event.end %>
-</p>
+      <% if current_user.admin? %>
+        <%= link_to 'Edit', edit_event_path(@event), :class => "btn btn-primary" %> 
+      <% else%>
+        <%= form_for [@event, @comment], html: {class: "form-inline"}, remote:true do |f| %>              
+          <div class="form-group" style="width:100%">
+              <%= f.hidden_field :user_id, value: current_user.id %>
+              <%= f.hidden_field :event_id, value: @event.id %>
+              <%= f.text_area :content, rows: 1, :class => "comment-box form-control", :style=>"width:50%",
+                  :required => true, :autocomplete => 'off', placeholder: "Comment" %>
+                  
+              <%= f.submit "Comment", id: "reply_submit", class: "btn btn-primary" %>
+          </div>
+        <% end %>
 
-<%= link_to 'Edit', edit_event_path(@event) %> |
-<%= link_to 'Back', "javascript: history.go(-1)" %>
+        <% @comments.each do |comment| %>
+          <div class="row">
+            <div class="col-md-1"><%= comment.user.name %></div>
+            <div class="col-md-6"><%= comment.content %></div>
+          </div>
+        <% end %>
+        <%= link_to 'Join', "javascript.void(0)", :class => "btn btn-primary" %> 
+      <% end %>
+
+      <%= link_to 'Back', "javascript: history.go(-1)", :class => "btn btn-secondary" %>
+    </div>
+    <div class="col-md-3">
+      <%= render('layouts/advertisement') %>
+    </div>
+  </div>
+</div>
