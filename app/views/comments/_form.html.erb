@@ -1,4 +1,4 @@
-<%= form_with(model: comment, local: true) do |form| %>
+<%= form_for [event, comment], html: {class: "form-inline"} do |form| %>
   <% if comment.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
@@ -11,27 +11,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
+  <div class="form-group" style="width:100%">
+      <%= form.hidden_field :user_id, value: current_user.id %>
+      <%= form.hidden_field :event_id, value: event.id %>
+      <%= form.text_area :content, rows: 1, :class => "comment-box form-control", :style=>"width:50%",
+          :required => true, :autocomplete => 'off', placeholder: "Comment" %>
+          
+      <%= form.submit "Comment", id: "reply_submit", class: "btn btn-primary" %>
   </div>
 
-  <div class="field">
-    <%= form.label :event_id %>
-    <%= form.text_field :event_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
-
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
