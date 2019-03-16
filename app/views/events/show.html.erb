@@ -31,30 +31,23 @@
         <%= @event.description %>
       </p>
 
-      <% if current_user.admin? %>
-        <%= link_to 'Edit', edit_event_path(@event), :class => "btn btn-primary" %> 
-      <% else%>
-        <%= form_for [@event, @comment], html: {class: "form-inline"}, remote:true do |f| %>              
-          <div class="form-group" style="width:100%">
-              <%= f.hidden_field :user_id, value: current_user.id %>
-              <%= f.hidden_field :event_id, value: @event.id %>
-              <%= f.text_area :content, rows: 1, :class => "comment-box form-control", :style=>"width:50%",
-                  :required => true, :autocomplete => 'off', placeholder: "Comment" %>
-                  
-              <%= f.submit "Comment", id: "reply_submit", class: "btn btn-primary" %>
-          </div>
-        <% end %>
+      <% if user_signed_in? %>
+        <% if current_user.admin? %>
+          <%= link_to 'Edit', edit_event_path(@event), :class => "btn btn-primary" %> 
+          <%= link_to 'Back', "javascript: history.go(-1)", :class => "btn btn-secondary" %>
+        <% else %>
 
-        <% @comments.each do |comment| %>
-          <div class="row">
-            <div class="col-md-1"><%= comment.user.name %></div>
-            <div class="col-md-6"><%= comment.content %></div>
-          </div>
+          <%= link_to 'Join', "javascript:void(0)", :class => "btn btn-primary" %> 
+          <%= link_to 'Back', "javascript: history.go(-1)", :class => "btn btn-secondary" %>
+          <%= render partial: "comments/form", locals: { event: @event, comment: @comment } %>
+
+          
+          <%= render partial: "comments/index",  collection: @event.comments, as: "comment" %>
         <% end %>
-        <%= link_to 'Join', "javascript.void(0)", :class => "btn btn-primary" %> 
+      <% else %>
+        <p>Sign in to view comments</p>
       <% end %>
 
-      <%= link_to 'Back', "javascript: history.go(-1)", :class => "btn btn-secondary" %>
     </div>
     <div class="col-md-3">
       <%= render('layouts/advertisement') %>
