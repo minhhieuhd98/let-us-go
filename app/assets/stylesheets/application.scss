@@ -1,9 +1,17 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ *= require gijgo/css/gijgo
+ */
+
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 @import "navigation";
 @import "footer";
 @import "welcome";
 @import "fullcalendar";
+@import "events";
 
 .body{
     min-height: 1000px;
