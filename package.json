@@ -1,5 +1,7 @@
 {
   "name": "let-us-go",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "gijgo": "^1.9.13"
+  }
 }
