@@ -6,7 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(name: "Admin", address: "Shinagawa-ku, Tokyo", gender: "LBGT", phone: "12345678", email: "admin@email.com", password: "123456", role: "admin")
+User.create(name: "Admin", address: "Shinagawa-ku, Tokyo", gender: Faker::Gender.binary_type, phone: Faker::PhoneNumber.phone_number, email: "admin@email.com", password: "123456", role: "admin")
+
+20.times do
+    User.create(
+        name: Faker::Name.name,
+        address: Faker::Address.full_address,
+        gender: Faker::Gender.binary_type,
+        phone: Faker::PhoneNumber.phone_number,
+        email: Faker::Internet.email,
+        password: "123456789",
+        role: "user",
+    )
+end
+
 Event.create([
     {
         name: "Trải nghiệm Yosakoi", 

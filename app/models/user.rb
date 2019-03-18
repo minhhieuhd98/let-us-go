@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :attendances
   has_many :events, through: :attendances
-  enum role: [:user, :vip, :admin]
+  enum role: [:user, :admin]
   after_initialize :set_default_role, :if => :new_record?
   scope :by_role, -> {where role: "admin" }
 
