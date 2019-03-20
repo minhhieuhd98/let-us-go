@@ -47,6 +47,14 @@ events = Event.create([
         age_filter: 6,
     }
 ])
-events[0].pictures.attach([io: File.open(Rails.root.join('app', 'assets', 'images', 'events', '1.jpg')), filename: '1.jpg'])
+events[0].pictures.attach([
+    {
+        io: File.open(Rails.root.join('app', 'assets', 'images', 'events', '1.jpg')), 
+        filename: '1.jpg',
+    }, {
+        io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'img0183-15220782296711431315793.jpg')), 
+        filename: 'img0183-15220782296711431315793.jpg',
+    }
+])
 events[1].pictures.attach([io: File.open(Rails.root.join('app', 'assets', 'images', 'events', '2.jpg')), filename: '2.jpg'])
 events[2].pictures.attach([io: File.open(Rails.root.join('app', 'assets', 'images', 'events', '3.jpg')), filename: '3.jpg'])
