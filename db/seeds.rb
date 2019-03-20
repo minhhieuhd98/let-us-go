@@ -20,7 +20,7 @@ User.create(name: "Admin", address: "Shinagawa-ku, Tokyo", gender: Faker::Gender
     )
 end
 
-Event.create([
+events = Event.create([
     {
         name: "Trải nghiệm Yosakoi", 
         description: "Đây là sự kiện diễn ra nhằm giới thiệu cho các em thiếu nhi về 1 nét văn hoá của Nhật Bản", 
@@ -29,7 +29,6 @@ Event.create([
         end: Time.now, 
         hidden_status: false,
         age_filter: 1,
-        pictures: "1.jpg",
     }, {
         name: "Học thử lớp vẽ Dũng Joon", 
         description: "Hãy tới và tham gia lớp vẽ! Chỉ 1 buổi duy nhất!", 
@@ -38,7 +37,6 @@ Event.create([
         end: Time.now, 
         hidden_status: false,
         age_filter: 5,
-        pictures: "2.jpg",
     }, {
         name: "Chung kết cuộc thi hùng biện thiếu nhi", 
         description: "Sau 3 tháng tuyển chọn, 10 thí sinh có bài viết hay nhất đã lọt vào vòng chung kết", 
@@ -47,6 +45,8 @@ Event.create([
         end: Time.now, 
         hidden_status: false,
         age_filter: 6,
-        pictures: "3.jpg",
     }
 ])
+events[0].pictures.attach([io: File.open(Rails.root.join('app', 'assets', 'images', 'events', '1.jpg')), filename: '1.jpg'])
+events[1].pictures.attach([io: File.open(Rails.root.join('app', 'assets', 'images', 'events', '2.jpg')), filename: '2.jpg'])
+events[2].pictures.attach([io: File.open(Rails.root.join('app', 'assets', 'images', 'events', '3.jpg')), filename: '3.jpg'])
