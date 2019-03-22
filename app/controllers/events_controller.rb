@@ -1,31 +1,38 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show]
+  after_action :verify_authorized
 
   # GET /events
   # GET /events.json
   def index
+    authorize Event
     @events = Event.all
   end
 
   # GET /events/1
   # GET /events/1.json
   def show
+    authorize @event
     @comment = Comment.new
     @comments = @event.comments
   end
 
   # GET /events/new
   def new
+    authorize Event
     @event = Event.new
   end
 
   # GET /events/1/edit
   def edit
+    authorize @event
   end
 
   # POST /events
   # POST /events.json
   def create
+    authorize Event
     @event = Event.new(event_params)
     @event.hidden_status = true
 
@@ -43,6 +50,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
+    authorize Event
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
@@ -57,6 +65,7 @@ class EventsController < ApplicationController
   # DELETE /events/1
   # DELETE /events/1.json
   def destroy
+    authorize @event
     @event.destroy
     respond_to do |format|
       format.html { redirect_to events_url, notice: 'Event was successfully destroyed.' }
@@ -74,6 +83,6 @@ class EventsController < ApplicationController
     def event_params
       params[:event][:start] = params[:event][:start].to_datetime
       params[:event][:end] = params[:event][:end].to_datetime
-      params.require(:event).permit(:name, :description, :place, :start, :end, :age_filter, :pictures)
+      params.require(:event).permit(:name, :description, :place, :start, :end, :age_filter, pictures: [])
     end
 end
