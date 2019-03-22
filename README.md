@@ -7,7 +7,11 @@ Things you may want to cover:
 
 * Ruby version: 5.2.2
 
-* System dependencies
+* System dependencies:
+
+yarn: 1.15.2
+
+mysql: 8.0.13
 
 * Configuration
 

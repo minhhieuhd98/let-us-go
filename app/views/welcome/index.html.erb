@@ -11,7 +11,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-md-4 first-picture">
-                <%= image_tag(event.pictures[0], :alt => "Event picture", :class => "events-list-picture") if event.pictures.attached? %>
+                <%= image_tag(event.pictures.first, :alt => "Event picture", :class => "events-list-picture") if event.pictures.attached? %>
               </div>
               <div class="col-md-8">
                 <%= link_to content_tag(:h5, event.name, :class => "card-title"), event_path(event)%>
