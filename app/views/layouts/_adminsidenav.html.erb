@@ -4,10 +4,10 @@
       <a class="nav-link" href="#">Manage Places</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Manage Events</a>
+      <%= link_to 'Manage Events', events_path, method: :get, class: "nav-link" %>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="#">Manage Admins</a>
+      <%= link_to 'Manage Admins', users_path, method: :get, class: "nav-link" %>
     </li>
     <li class="nav-item">
       <a class="nav-link" href="#">View analytics</a>
