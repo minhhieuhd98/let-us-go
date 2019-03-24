@@ -19,7 +19,7 @@ class EventPolicy < ApplicationPolicy
     end 
 
     def show?
-        true
+      @current_user && @current_user.admin? or @event.hidden_status==false
     end
   
     def create?
@@ -27,6 +27,10 @@ class EventPolicy < ApplicationPolicy
     end
 
     def update?
+      @current_user.admin?
+    end
+
+    def public_event?
       @current_user.admin?
     end
 

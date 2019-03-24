@@ -1,7 +1,9 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy, :public_event]
   before_action :authenticate_user!, except: [:show]
   after_action :verify_authorized
+
+  extend EventsHelper
 
   # GET /events
   # GET /events.json
@@ -59,6 +61,15 @@ class EventsController < ApplicationController
         format.html { render :edit }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def public_event
+    authorize Event
+    @event.update_attribute(:hidden_status, false)
+    respond_to do |format|
+      format.html { redirect_to events_url, notice: 'Event was successfully updated.' }
+      format.json { render :show, status: :ok, location: @event }
     end
   end
 

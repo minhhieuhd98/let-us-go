@@ -3,7 +3,11 @@
 <div class="container">
   <div class="row">
 
-    <%= render('layouts/sidenav') %>
+    <% if user_signed_in? && current_user.admin? %>
+      <%= render('layouts/adminsidenav') %>
+    <% else %>
+      <%= render('layouts/sidenav') %>
+    <% end %>
 
     <div class="col-md-7">
       <% @events.each do |event| %>
