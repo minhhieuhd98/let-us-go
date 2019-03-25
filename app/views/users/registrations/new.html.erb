@@ -50,8 +50,13 @@
 
             <div class="form-group row">
               <%= f.label :gender, class: "col-md-4 col-form-label text-md-right" %>
-              <div class="col-md-6">
-                <%= f.text_field :gender, class:"form-control" %>
+              <div class="col-md-3">
+                <%= f.radio_button :gender, 'Male' %>
+                <%= label :gender, 'Male' %>
+              </div>
+              <div class="col-md-3">
+                <%= f.radio_button :gender, 'Female' %>
+                <%= label :gender, 'Female' %> 
               </div>
             </div>
 
@@ -73,7 +78,7 @@
           <div class="text-center">or</div>
           
           <div class="row">
-            <div class="col-md-8 offset-md-4">
+            <div class="col-md-4 offset-md-4 text-center">
               <%= render "users/shared/links" %>
             </div>
           </div>
