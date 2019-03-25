@@ -11,6 +11,6 @@ class CommentPolicy < ApplicationPolicy
     end
 
     def destroy?
-      current_user == comment.user
+      @current_user == @comment.user
     end
 end
