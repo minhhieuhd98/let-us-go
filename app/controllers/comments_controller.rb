@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
-  # after_action :verify_authorized, only: [:update, :destroy]
+  after_action :verify_authorized, only: [:update, :destroy]
 
   # GET /comments
   # GET /comments.json
@@ -58,7 +58,7 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
-    # authorize User
+    authorize @comment
     @comment.destroy
     respond_to do |format|
       format.html { redirect_to event_path @comment.event, notice: 'Comment was successfully destroyed.' }
