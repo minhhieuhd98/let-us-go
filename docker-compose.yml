@@ -1,0 +1,29 @@
+version: '3'
+services:
+  db:
+    image: mysql:5.7.8
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+    env_file:
+      - .env.development
+
+  web:
+    build: .
+    command: /bin/sh -c "bundle exec rails server -e production -p 8888"
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/usr/src/app
+    environment:
+      RAILS_ENV: development
+    env_file:
+      - .env.development
+    depends_on:
+      - db
+    restart: always
+
+volumes:
+  db-data:
+    
