@@ -58,3 +58,6 @@ events[0].pictures.attach([
 ])
 events[1].pictures.attach([io: File.open(Rails.root.join('app', 'assets', 'images', 'events', '2.jpg')), filename: '2.jpg'])
 events[2].pictures.attach([io: File.open(Rails.root.join('app', 'assets', 'images', 'events', '3.jpg')), filename: '3.jpg'])
+
+# chuẩn bị lại dữ liệu
+# đặc tả người quản lý => hỏi công ty bên Nhật
