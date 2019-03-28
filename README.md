@@ -13,7 +13,15 @@ yarn: 1.15.2
 
 mysql: 8.0.13
 
-* Configuration
+* Configuration:
+Docker:
+run `docker-compose up`
+
+`docker exec -ti let-us-go_web_1 /bin/sh`
+
+`rails db:migrate`
+
+`rails db:seed`
 
 * Database creation
 

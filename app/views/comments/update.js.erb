@@ -1,0 +1,6 @@
+$('.comment-form').html("<%= escape_javascript( render partial: "comments/form", 
+    event: @comment.event, comment: @comment ) %>")
+$('.comment-box').val('.comment-box').val('');
+$('.comment-box').focus();
+$('.comments-list').html('<%= j render "comments/index",
+    comments: @event.comments.desc %>').appendTo('.comment-list');

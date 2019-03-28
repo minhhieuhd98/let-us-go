@@ -1,4 +1,4 @@
-$('.comment-form-create').html('<%= render partial: "comments/form", 
+$('.comment-form').html('<%= render partial: "comments/form", 
     locals: { event: @event, comment: @comment } %>');
 $('.comments-list').html('<%= j render "comments/index",
     comments: @event.comments.desc %>').appendTo('.comment-list');

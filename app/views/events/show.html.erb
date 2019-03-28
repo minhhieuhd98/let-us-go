@@ -51,13 +51,13 @@
 
       <% if user_signed_in? %>
         <% if current_user.admin? %>
-          <%= link_to 'Edit', edit_event_path(@event), :class => "btn btn-primary" %> 
+          <%= link_to 'Edit', edit_event_path(@event), :remote => true, :class => "btn btn-primary" %> 
           <%= link_to 'Back', "javascript: history.go(-1)", :class => "btn btn-secondary" %>
         <% else %>
 
           <%= link_to 'Join', "javascript:void(0)", :class => "btn btn-primary" %> 
           <%= link_to 'Back', "javascript: history.go(-1)", :class => "btn btn-secondary" %>
-          <div class="comment-form-create">
+          <div class="comment-form">
             <%= render partial: "comments/form", locals: { event: @event, comment: @comment } %>
           </div>
 

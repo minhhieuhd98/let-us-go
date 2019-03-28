@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
-  after_action :verify_authorized, only: [:update, :destroy]
+  after_action :verify_authorized, only: [:destroy]
 
   # GET /comments
   # GET /comments.json
@@ -21,6 +21,9 @@ class CommentsController < ApplicationController
   # GET /comments/1/edit
   def edit
     # authorize User
+    respond_to do |format|          
+      format.js {}
+    end
   end
 
   # POST /comments
@@ -46,11 +49,11 @@ class CommentsController < ApplicationController
   def update
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to event_path @comment.event, notice: 'Comment was successfully updated.' }
+        format.html { redirect_to event_path @comment.event }
         format.js {}
       else
         format.html { render :edit }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
+        format.js {}
       end
     end
   end
@@ -61,7 +64,7 @@ class CommentsController < ApplicationController
     authorize @comment
     @comment.destroy
     respond_to do |format|
-      format.html { redirect_to event_path @comment.event, notice: 'Comment was successfully destroyed.' }
+      format.html { redirect_to event_path @comment.event }
       format.json { head :no_content }
     end
   end
