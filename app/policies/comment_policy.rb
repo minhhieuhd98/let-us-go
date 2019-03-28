@@ -10,6 +10,10 @@ class CommentPolicy < ApplicationPolicy
       @current_user == @comment.user
     end
 
+    def edit?
+      @current_user == @comment.user
+    end
+
     def destroy?
       @current_user == @comment.user
     end

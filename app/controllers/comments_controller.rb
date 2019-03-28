@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :set_comment, only: [:show, :edit, :update, :destroy]
-  after_action :verify_authorized, only: [:destroy]
+  after_action :verify_authorized, only: [:edit, :update, :destroy]
 
   # GET /comments
   # GET /comments.json
@@ -20,7 +20,7 @@ class CommentsController < ApplicationController
 
   # GET /comments/1/edit
   def edit
-    # authorize User
+    authorize @comment
     respond_to do |format|          
       format.js {}
     end
@@ -47,6 +47,7 @@ class CommentsController < ApplicationController
   # PATCH/PUT /comments/1
   # PATCH/PUT /comments/1.json
   def update
+    authorize @comment
     respond_to do |format|
       if @comment.update(comment_params)
         format.html { redirect_to event_path @comment.event }
