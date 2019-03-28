@@ -1,10 +1,14 @@
-<div class="row">
+<div class="row" id='comment_<%= comment.id %>'>
   <div class="col-md-1"><%= comment.user.name %></div>
   <div class="col-md-6"><%= comment.content %></div>
   <% if user_signed_in? && current_user == comment.user %>  
     <div class="col-md-1">
-      <%= link_to 'Delete', event_comment_path(comment.event_id, comment), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
+      <%= link_to 'Edit', edit_event_comment_path(comment.event, comment), class: "btn btn-link", remote: true %>
+    </div>
+    <div class="col-md-1">
+      <%= link_to 'Delete', event_comment_path(comment.event, comment), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %>
     </div>
   <% end %>
 </div>
+
   
