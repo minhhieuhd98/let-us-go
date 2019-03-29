@@ -70,10 +70,22 @@
   $('#start').datetimepicker({ 
     footer: true,
     format: 'HH:MM yyyy-mm-dd',
+    datepicker: { 
+      minDate: function() {
+        var date = new Date();
+        return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+      }
+    }
   });
   $('#end').datetimepicker({ 
     footer: true,
     format: 'HH:MM yyyy-mm-dd',
+    datepicker: { 
+      minDate: function() {
+        var date = new Date();
+        return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+      }
+    }
   });
 </script>
 <% end %>
