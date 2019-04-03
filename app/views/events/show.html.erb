@@ -55,9 +55,18 @@
           <%= link_to 'Back', "javascript: history.go(-1)", :class => "btn btn-secondary" %>
         <% else %>
 
-          <%= link_to 'Join', "javascript:void(0)", :class => "btn btn-primary" %> 
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#attend-form" id="create-join">
+            Join
+          </button>
+
+          <div class="modal fade" id="attend-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <%= render 'attendances/form' %> 
+            </div>
+          </div>
+
           <%= link_to 'Back', "javascript: history.go(-1)", :class => "btn btn-secondary" %>
-          <div class="comment-form">
+          <div class="comment-form mt-2">
             <%= render partial: "comments/form", locals: { event: @event, comment: @comment } %>
           </div>
 
@@ -65,7 +74,7 @@
       <% else %>
         <p>Sign in to comment</p>
       <% end %>
-      <div class="comments-list">
+      <div class="comments-list mt-2">
         <%= render partial: "comments/index",  collection: @event.comments, as: "comment" %>
       </div>
     </div>
