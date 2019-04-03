@@ -54,11 +54,16 @@
           <%= link_to 'Edit', edit_event_path(@event), :remote => true, :class => "btn btn-primary" %> 
           <%= link_to 'Back', "javascript: history.go(-1)", :class => "btn btn-secondary" %>
         <% else %>
-
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#attend-form" id="create-join">
-            Join
-          </button>
-
+          <% if @event.user_ids.include?(current_user.id) %>
+            <p>You have signed up for <span id="current_attendance"><%= @attendance.accompanied_number %></span> people.</p>
+            <%= link_to "Edit Joining", edit_event_attendance_path(@event, @attendance), :remote => true,
+              :class => "btn btn-success", 'data-toggle' => 'modal', 'data-target' => "#attend-form" %>
+          <% else %>
+            <p id="join_event">Do you want to sign up?</p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#attend-form" id="create-join">
+              Join
+            </button>
+          <% end %>
           <div class="modal fade" id="attend-form" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <%= render 'attendances/form' %> 

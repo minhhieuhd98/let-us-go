@@ -13,12 +13,9 @@ class AttendancesController < ApplicationController
       @attendance = @event.attendances.new(params[:attendance].permit(:accompanied_number))
       @attendance.user_id = current_user.id
   
-  
       respond_to do |format|
         if @attendance.save
-          format.js
-          format.html { redirect_to event_path @attendance.event, notice: 'Attendance was successfully created.' }
-  
+          format.html { redirect_to @event }
           format.json { render :show, status: :created, location: [@event] }
         else
           format.html { render "events/show" }
@@ -54,13 +51,12 @@ class AttendancesController < ApplicationController
       end
     end
   
-  
     private
     def find_event
       @event = Event.find(params[:event_id])
     end
   
     def find_attendance
-      @attendance = @event.attendances.find(params[:id])
+      @attendance = Attendance.find(params[:id])
     end  
 end

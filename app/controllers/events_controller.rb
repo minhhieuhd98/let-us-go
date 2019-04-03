@@ -18,6 +18,7 @@ class EventsController < ApplicationController
     authorize @event
     @comment = Comment.new
     @comments = @event.comments
+    @attendance = @event.attendances.find_by(user_id: current_user.id)
   end
 
   # GET /events/new
