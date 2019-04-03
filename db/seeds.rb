@@ -7,6 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create(name: "Admin", address: "Shinagawa-ku, Tokyo", gender: Faker::Gender.binary_type, phone: Faker::PhoneNumber.phone_number, email: "admin@email.com", password: "123456", role: "admin")
+User.create(
+    name: Faker::Name.name,
+    address: Faker::Address.full_address,
+    gender: Faker::Gender.binary_type,
+    phone: Faker::PhoneNumber.phone_number,
+    email: "quan@email.com",
+    password: "123456",
+    role: "user",
+)
 
 20.times do
     User.create(
@@ -15,7 +24,7 @@ User.create(name: "Admin", address: "Shinagawa-ku, Tokyo", gender: Faker::Gender
         gender: Faker::Gender.binary_type,
         phone: Faker::PhoneNumber.phone_number,
         email: Faker::Internet.email,
-        password: "123456789",
+        password: "123456",
         role: "user",
     )
 end
@@ -25,24 +34,24 @@ events = Event.create([
         name: "Trải nghiệm Yosakoi", 
         description: "Đây là sự kiện diễn ra nhằm giới thiệu cho các em thiếu nhi về 1 nét văn hoá của Nhật Bản", 
         place: "Hanoi", 
-        start: Time.now, 
-        end: Time.now, 
+        start: Time.now.next_week, 
+        end: Time.now.next_month, 
         hidden_status: false,
         age_filter: 1,
     }, {
         name: "Học thử lớp vẽ Dũng Joon", 
         description: "Hãy tới và tham gia lớp vẽ! Chỉ 1 buổi duy nhất!", 
         place: "Hanoi", 
-        start: Time.now, 
-        end: Time.now, 
+        start: Time.now.next_week, 
+        end: Time.now.next_month, 
         hidden_status: false,
         age_filter: 5,
     }, {
         name: "Chung kết cuộc thi hùng biện thiếu nhi", 
         description: "Sau 3 tháng tuyển chọn, 10 thí sinh có bài viết hay nhất đã lọt vào vòng chung kết", 
         place: "Hanoi", 
-        start: Time.now, 
-        end: Time.now, 
+        start: Time.now.next_week, 
+        end: Time.now.next_month, 
         hidden_status: false,
         age_filter: 6,
     }
@@ -58,6 +67,3 @@ events[0].pictures.attach([
 ])
 events[1].pictures.attach([io: File.open(Rails.root.join('app', 'assets', 'images', 'events', '2.jpg')), filename: '2.jpg'])
 events[2].pictures.attach([io: File.open(Rails.root.join('app', 'assets', 'images', 'events', '3.jpg')), filename: '3.jpg'])
-
-# chuẩn bị lại dữ liệu
-# đặc tả người quản lý => hỏi công ty bên Nhật
