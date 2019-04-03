@@ -65,5 +65,10 @@ events[0].pictures.attach([
         filename: 'img0183-15220782296711431315793.jpg',
     }
 ])
+Place.create!([
+    { "name": "Buckingham Palace", "latitude": "51.501564","longitude": "-0.141944"},
+    { "name": "Westminster Abbey", "latitude": "51.499581", "longitude": "-0.127309"},
+    { "name": "Big Ben", "latitude": "51.500792", "longitude": "-0.124613"}
+])
 events[1].pictures.attach([io: File.open(Rails.root.join('app', 'assets', 'images', 'events', '2.jpg')), filename: '2.jpg'])
 events[2].pictures.attach([io: File.open(Rails.root.join('app', 'assets', 'images', 'events', '3.jpg')), filename: '3.jpg'])
