@@ -10,7 +10,6 @@ class AttendancesController < ApplicationController
     end
   
     def create
-      @attendances = Attendance.where(event_id: @event).order("created_at DESC")
       @attendance = @event.attendances.new(params[:attendance].permit(:accompanied_number))
       @attendance.user_id = current_user.id
   
@@ -37,7 +36,6 @@ class AttendancesController < ApplicationController
   
     def update
       authorize @attendance
-      @attendances = Attendance.where(event_id: @event).order("created_at DESC")
       respond_to do |format|
       if @attendance.update(params[:attendance].permit(:accompanied_number))
         format.js
@@ -49,7 +47,6 @@ class AttendancesController < ApplicationController
   
     def destroy
       authorize @attendance
-      @attendances = Attendance.where(event_id: @event).order("created_at DESC")
       @attendance.destroy
       respond_to do |format|
         format.html { redirect_to event_path(@event), notice: 'Attendances was successfully destroyed.' }
