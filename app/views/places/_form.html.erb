@@ -1,3 +1,10 @@
+<% provide :head_tags do %>
+    <meta name='turbolinks-visit-control' content='reload'>
+    <script>
+        document.addEventListener("DOMContentLoaded", initMap2);
+    </script>
+<% end %>
+
 <%= form_with(model: place, local: true) do |form| %>
   <% if place.errors.any? %>
     <div id="error_explanation">
@@ -11,32 +18,52 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div class="form-group row">
+    <%= form.label :name, :class => "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= form.text_field :name, :class => "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class="form-group row">
+    <%= form.label :description, :class => "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= form.text_area :description, :class => "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :picture %>
-    <%= form.text_field :picture %>
+  <div class="form-group row">
+    <%= form.label :picture, :class => "control-label col-sm-2" %>
+    <div class="col-sm-10">
+      <%= form.file_field :picture %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :latitude %>
-    <%= form.text_field :latitude %>
+  <div class="row">
+    <div class="col-md-9">
+      <div id="map2"></div>
+    </div>
+
+    <div class="col-md-3">
+      <div class="form-group row">
+        <%= form.label "Lat:", :class => "control-label col-sm-3" %>
+        <div class="col-sm-8">
+          <%= form.text_field :latitude, :class => "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <%= form.label "Long:", :class => "control-label col-sm-3" %>
+        <div class="col-sm-8">
+          <%= form.text_field :longitude, :class => "form-control" %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :longitude %>
-    <%= form.text_field :longitude %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group mt-2"> 
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= form.submit :class => "btn btn-primary" %>
+    </div>
   </div>
 <% end %>

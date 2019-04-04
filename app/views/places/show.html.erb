@@ -8,35 +8,27 @@
 <% end %>
 
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
+<h1>
   <%= @place.name %>
-</p>
+</h1>
 
-<p>
-  <strong>Description:</strong>
-  <%= @place.description %>
-</p>
 
-<p>
-  <strong>Picture:</strong>
-  <%= @place.picture %>
-</p>
+<div class="row">
+  <div class="col-md-5">
+    <%= image_tag(@place.picture, :alt => "Place picture", :class => "place-picture") if @place.picture.attached? %>
+  </div>
 
-<p>
+  <div class="col-md-5">
     <div id="map"></div>
-</p>
+  </div>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @place.latitude %>
-</p>
+  <div class="col-md-10">
+    <p>
+      <strong>Description:</strong>
+      <%= @place.description %>
+    </p>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @place.longitude %>
-</p>
-
-<%= link_to 'Edit', edit_place_path(@place) %> |
-<%= link_to 'Back', places_path %>
+    <%= link_to 'Edit', edit_place_path(@place) %> |
+    <%= link_to 'Back', places_path %>
+  </div>
+</div>
