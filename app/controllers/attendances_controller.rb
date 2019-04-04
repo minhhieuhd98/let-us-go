@@ -10,16 +10,12 @@ class AttendancesController < ApplicationController
     end
   
     def create
-      @attendances = Attendance.where(event_id: @event).order("created_at DESC")
       @attendance = @event.attendances.new(params[:attendance].permit(:accompanied_number))
       @attendance.user_id = current_user.id
   
-  
       respond_to do |format|
         if @attendance.save
-          format.js
-          format.html { redirect_to event_path @attendance.event, notice: 'Attendance was successfully created.' }
-  
+          format.html { redirect_to @event }
           format.json { render :show, status: :created, location: [@event] }
         else
           format.html { render "events/show" }
@@ -37,7 +33,6 @@ class AttendancesController < ApplicationController
   
     def update
       authorize @attendance
-      @attendances = Attendance.where(event_id: @event).order("created_at DESC")
       respond_to do |format|
       if @attendance.update(params[:attendance].permit(:accompanied_number))
         format.js
@@ -49,7 +44,6 @@ class AttendancesController < ApplicationController
   
     def destroy
       authorize @attendance
-      @attendances = Attendance.where(event_id: @event).order("created_at DESC")
       @attendance.destroy
       respond_to do |format|
         format.html { redirect_to event_path(@event), notice: 'Attendances was successfully destroyed.' }
@@ -57,13 +51,12 @@ class AttendancesController < ApplicationController
       end
     end
   
-  
     private
     def find_event
       @event = Event.find(params[:event_id])
     end
   
     def find_attendance
-      @attendance = @event.attendances.find(params[:id])
+      @attendance = Attendance.find(params[:id])
     end  
 end
