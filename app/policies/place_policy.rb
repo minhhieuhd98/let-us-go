@@ -1,9 +1,9 @@
-class EventPolicy < ApplicationPolicy
-    attr_reader :current_user, :event
+class PlacePolicy < ApplicationPolicy
+    attr_reader :current_user, :place
   
-    def initialize(current_user, event)
+    def initialize(current_user, place)
       @current_user = current_user
-      @event = event
+      @place = place
     end
   
     def index?
@@ -19,7 +19,7 @@ class EventPolicy < ApplicationPolicy
     end 
 
     def show?
-      @current_user && @current_user.admin? or @event.hidden_status==false
+      true
     end
   
     def create?
@@ -30,15 +30,7 @@ class EventPolicy < ApplicationPolicy
       @current_user.admin?
     end
 
-    def public_event?
-      @current_user.admin?
-    end
-
     def destroy?
       @current_user.admin?
-    end
-
-    def permitted_attributes
-        [:name, :description, :place, :start, :end, :age_filter, :pictures]
     end
 end

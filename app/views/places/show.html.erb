@@ -9,34 +9,40 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @place.name %>
-</p>
+<div class="row">    
+    <% if user_signed_in? && current_user.admin? %>
+      <%= render('layouts/adminsidenav') %>
+    <% else %>
+      <%= render('layouts/sidenav') %>
+    <% end %>
 
-<p>
-  <strong>Description:</strong>
-  <%= @place.description %>
-</p>
+    <div class="col-md-7">
+      <h1>
+        <%= @place.name %>
+      </h1>
 
-<p>
-  <strong>Picture:</strong>
-  <%= @place.picture %>
-</p>
+      <div class="row">
+        <div class="col-md-9 place-image-holder">
+          <%= image_tag(@place.picture, :alt => "Place picture", :class => "place-picture") if @place.picture.attached? %>
+        </div>
 
-<p>
-    <div id="map"></div>
-</p>
+        <div class="col-md-3">
+          <div id="map"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-10">
+          <p>
+            <strong>Description:</strong>
+            <%= @place.description %>
+          </p>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @place.latitude %>
-</p>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @place.longitude %>
-</p>
-
-<%= link_to 'Edit', edit_place_path(@place) %> |
-<%= link_to 'Back', places_path %>
+          <% if user_signed_in? && current_user.admin? %>
+            <%= link_to 'Edit', edit_place_path(@place), class: "btn btn-warning" %>
+          <% end %>
+          <%= link_to 'Back', places_path, class: "btn btn-link" %>
+        </div>
+      </div>
+    </div>
+</div>

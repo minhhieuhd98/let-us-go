@@ -59,7 +59,7 @@
             <%= link_to "Edit Joining", edit_event_attendance_path(@event, @attendance), :remote => true,
               :class => "btn btn-success", 'data-toggle' => 'modal', 'data-target' => "#attend-form" %>
           <% else %>
-            <p id="join_event">Do you want to sign up?</p>
+            <p id="join_event">Do you want to register for the event?</p>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#attend-form" id="create-join">
               Join
             </button>
