@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :places
   # get 'welcome/index'
   root "welcome#index"
+  get 'all_places' => 'welcome#place_index', as: 'home_places'
   
   # resources :comments
   devise_for :users
@@ -10,8 +11,6 @@ Rails.application.routes.draw do
   resources :events do
     resources :comments, :except => [:index]
     resources :attendances
-    # get 'events/:id/attendances/new' => 'attendances#new', as: 'new_event_attendance' 
-    # post 'events/:id/attendances' => 'attendances#create', as: 'attendances'
   end
   put 'events/:id/public' => 'events#public_event', as: 'public_event'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
