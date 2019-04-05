@@ -18,7 +18,7 @@ class EventsController < ApplicationController
     authorize @event
     @comment = Comment.new
     @comments = @event.comments
-    @attendance = @event.attendances.find_by(user_id: current_user.id)
+    @attendance = @event.attendances.find_by(user_id: current_user.id) if user_signed_in? 
   end
 
   # GET /events/new

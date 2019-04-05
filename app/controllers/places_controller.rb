@@ -1,29 +1,36 @@
 class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show]
+  after_action :verify_authorized
 
   # GET /places
   # GET /places.json
   def index
+    authorize Place
     @places = Place.all
   end
 
   # GET /places/1
   # GET /places/1.json
   def show
+    authorize @place
   end
 
   # GET /places/new
   def new
+    authorize Place
     @place = Place.new
   end
 
   # GET /places/1/edit
   def edit
+    authorize @place
   end
 
   # POST /places
   # POST /places.json
   def create
+    authorize Place
     @place = Place.new(place_params)
 
     respond_to do |format|
@@ -40,6 +47,7 @@ class PlacesController < ApplicationController
   # PATCH/PUT /places/1
   # PATCH/PUT /places/1.json
   def update
+    authorize Place
     respond_to do |format|
       if @place.update(place_params)
         format.html { redirect_to @place, notice: 'Place was successfully updated.' }
@@ -54,6 +62,7 @@ class PlacesController < ApplicationController
   # DELETE /places/1
   # DELETE /places/1.json
   def destroy
+    authorize @place
     @place.destroy
     respond_to do |format|
       format.html { redirect_to places_url, notice: 'Place was successfully destroyed.' }
