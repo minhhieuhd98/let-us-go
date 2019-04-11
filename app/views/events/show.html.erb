@@ -28,6 +28,11 @@
           <p><%= @event.name %></p>
 
           <p>
+            <strong>Tags:</strong>
+            <%=raw tag_links(@event.all_tags)%>
+          </p>
+
+          <p>
             <strong>Place:</strong>
             <%= @event.place %>
           </p>

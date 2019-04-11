@@ -10,6 +10,9 @@
     <% end %>
 
     <div class="col-md-7">
+      <% if params[:tag] %>
+        <h2>Results for tag: <%= link_to('#'+params[:tag], params[:tag]) %></h2>
+      <% end %>
       <% @events.each do |event| %>
         <div class="card mb-2">
           <div class="card-body">
