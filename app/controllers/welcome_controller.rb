@@ -1,7 +1,11 @@
 class WelcomeController < ApplicationController
   extend WelcomeHelper
   def index
-    @events = Event.by_hidden_status() # sử dụng scope
+    if params[:tag]
+      @events = Event.by_hidden_status().tagged_with(params[:tag])
+    else
+      @events = Event.by_hidden_status()
+    end
   end
 
   def place_index

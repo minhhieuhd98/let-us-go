@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   # get 'welcome/index'
   root "welcome#index"
   get 'all_places' => 'welcome#place_index', as: 'home_places'
-  
+  get 'tags/:tag', to: 'welcome#index', as: "tag"
+
   # resources :comments
   devise_for :users
   resources :users
