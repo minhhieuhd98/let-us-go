@@ -37,9 +37,12 @@ gem 'jquery-rails'
 # Use Fullcalendar
 gem 'fullcalendar-rails'
 gem 'momentjs-rails', '~> 2.9', :github => 'derekprior/momentjs-rails'
+# Use Faker
 gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 # Use Date Validator
 gem 'date_validator'
+# Use Font Awesome
+gem "font-awesome-rails"
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
