@@ -3,5 +3,10 @@
   "private": true,
   "dependencies": {
     "gijgo": "^1.9.13"
-  }
+  },
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/BlazingRockStorm/let-us-go.git",
+  "author": "BlazingRockStorm <rocker.gryphon@gmail.com>",
+  "license": "MIT"
 }
