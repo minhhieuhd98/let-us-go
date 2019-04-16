@@ -5,7 +5,7 @@
     div {
         width: 100%;
         .form-control{
-            width: 60%;
+            width: 70%;
         }
     }
 }
@@ -16,4 +16,9 @@
 .comment-picture{
     max-width: 80%;
     max-height: 200px;
+}
+.comment-avatar{
+    width: 50px;
+    border-radius:100%;
+    border: 1px solid #dcd5d5;
 }

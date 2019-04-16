@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(name: "Admin", address: "Shinagawa-ku, Tokyo", gender: Faker::Gender.binary_type, phone: Faker::PhoneNumber.phone_number, email: "admin@email.com", password: "123456", role: "admin")
-User.create(
+User.create!(name: "Admin", address: "Shinagawa-ku, Tokyo", gender: Faker::Gender.binary_type, phone: Faker::PhoneNumber.phone_number, email: "admin@email.com", password: "123456", role: "admin")
+User.create!(
     name: Faker::Name.name,
     address: Faker::Address.full_address,
     gender: Faker::Gender.binary_type,
@@ -18,7 +18,7 @@ User.create(
 )
 
 20.times do
-    User.create(
+    User.create!(
         name: Faker::Name.name,
         address: Faker::Address.full_address,
         gender: Faker::Gender.binary_type,
@@ -29,7 +29,7 @@ User.create(
     )
 end
 
-events = Event.create([
+events = Event.create!([
     {
         name: "Trải nghiệm Yosakoi", 
         description: "Đây là sự kiện diễn ra nhằm giới thiệu cho các em thiếu nhi về 1 nét văn hoá của Nhật Bản", 

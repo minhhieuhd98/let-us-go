@@ -1,24 +1,54 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+    <div class="row mt-5">
+        <%= render('layouts/sidenav') %>
+        <div class="col-md-7">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-sm-4">
+                  <%= image_tag(@user.avatar, :alt => "avatar", :class => "avatar") if @user.avatar.attached? %>
+                </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+                <div class="col-sm-8">
+                  <h2>
+                    <strong><%= @user.name %></strong>
+                  </h2>
 
-<p>
-  <strong>Address:</strong>
-  <%= @user.address %>
-</p>
+                  <p>
+                    <strong>Address:</strong>
+                    <%= @user.address %>
+                  </p>
 
-<p>
-  <strong>Gender:</strong>
-  <%= @user.gender %>
-</p>
+                  <p>
+                    <strong>Gender:</strong>
+                    <%= @user.gender %>
+                  </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @user.phone %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+                  <p>
+                    <strong>Phone:</strong>
+                    <%= @user.phone %>
+                  </p>
+                  
+                  <%= link_to 'Edit', edit_user_path(@user), class: "btn btn-primary" %> 
+                  <%= link_to 'Back', users_path, class: "btn btn-secondary" %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h1 class="mt-5"><%= @user.name %>'s calendar this month</h1>
+          <div class="card">
+            <div class="card-body">
+              <div class="mt-2" id="calendar"></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+            <%= render('layouts/advertisement') %>
+        </div>
+    </div>
+</div>
+<script>
+  $('#calendar').fullCalendar({
+    defaultView: 'month'
+  });
+</script>
