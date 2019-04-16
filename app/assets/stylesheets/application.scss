@@ -15,9 +15,10 @@
 @import "events";
 @import "comments";
 @import "places";
+@import "users";
 
 .body{
-    min-height: 1000px;
+    min-height: 600px;
 }
 
 .card-header{
@@ -36,4 +37,18 @@
 th{
     background-color: $bgDefault;
     color: $colDefault;
+}
+
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  
+    input[type=file] {
+        font-size: 100px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        opacity: 0;
+    }
 }

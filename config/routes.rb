@@ -8,7 +8,6 @@ Rails.application.routes.draw do
   # resources :comments
   devise_for :users
   resources :users
-  get 'users/:id/calendar' => 'users#calendar', as: 'calendar'
   resources :events do
     resources :comments, :except => [:index]
     resources :attendances

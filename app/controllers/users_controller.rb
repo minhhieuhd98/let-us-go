@@ -27,10 +27,6 @@ class UsersController < ApplicationController
     authorize @user
   end
 
-  def calendar
-    authorize @user
-  end
-
   # POST /users
   # POST /users.json
   def create
@@ -52,9 +48,10 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    authorize User
+    authorize @user
     respond_to do |format|
-      if @user.update(user_params)
+      if @user.update_with_password(user_params)
+        bypass_sign_in(@user)
         format.html { redirect_to @user, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -83,6 +80,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :address, :gender, :phone, :role, :email, :password)
+      params.require(:user).permit(:name, :address, :gender, :phone, :role, :email, :avatar, :password, :password_confirmation, :current_password)
     end
 end
