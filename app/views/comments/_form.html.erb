@@ -16,7 +16,10 @@
       <%= form.hidden_field :event_id, value: event.id %>
       <%= form.text_area :content, rows: 1, :class => "comment-box form-control",
           :required => true, :autocomplete => 'off', placeholder: "Comment" %>
-          
+      <div class="upload-btn-wrapper comment-image">
+        <a href="javascript:void(0)" class="btn btn-secondary"><%= fa_icon "camera" %></a>
+        <%= form.file_field :image %>
+      </div>    
       <%= form.submit "Comment", id: "reply_submit", class: "btn btn-primary" %>
   </div>
 
