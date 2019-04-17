@@ -1,8 +1,12 @@
+require 'open_weather'
+
 class PlacesController < ApplicationController
   before_action :set_place, only: [:show, :edit, :update, :destroy]
   rescue_from Pundit::NotAuthorizedError, with: :user_place_not_authorized
   before_action :authenticate_user!, except: [:show]
   after_action :verify_authorized
+  
+  extend PlacesHelper
 
   # GET /places
   # GET /places.json
@@ -15,6 +19,10 @@ class PlacesController < ApplicationController
   # GET /places/1.json
   def show
     authorize @place
+    options = { units: "metric", APPID: Rails.application.credentials.open_weather_map_api_key}
+    options[:cnt] = 7
+    @weathers = OpenWeather::ForecastDaily.geocode(@place.latitude, @place.longitude, options)
+    # byebug
   end
 
   # GET /places/new
