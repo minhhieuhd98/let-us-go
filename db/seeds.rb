@@ -29,33 +29,6 @@ User.create!(
     )
 end
 
-events = Event.create!([
-    {
-        name: "Trải nghiệm Yosakoi", 
-        description: "Đây là sự kiện diễn ra nhằm giới thiệu cho các em thiếu nhi về 1 nét văn hoá của Nhật Bản", 
-        place: "Phố đi bộ Hà Nội", 
-        start: Time.now.next_week, 
-        end: Time.now.next_month, 
-        hidden_status: false,
-        age_filter: 1,
-    }, {
-        name: "Dã ngoại ở công viên Thống Nhất", 
-        description: "Với cây xanh và hồ trong sạch, cùng trải nghiệm các hoạt động ngoài trời", 
-        place: "Công viên Thống Nhất", 
-        start: Time.now.next_week, 
-        end: Time.now.next_month, 
-        hidden_status: false,
-        age_filter: 5,
-    }, {
-        name: "Chương tình xiếc đặc biệt", 
-        description: "Chương trình có sự tham gia của rất nhiều nghệ sĩ xiếc nổi tiếng trong và ngoài nước. Giữa chương trình có các tiết mục biểu diễn hài và ca nhạc. Buổi diễn chỉ bán vé cho các gia đình có con nhỏ", 
-        place: "Rạp xiếc Trung Ương", 
-        start: Time.now.next_week, 
-        end: Time.now.next_month, 
-        hidden_status: false,
-        age_filter: 6,
-    }
-])
 places = Place.create!([
     { 
         name: "Công viên thống nhất",
@@ -75,6 +48,33 @@ places = Place.create!([
         latitude: "21.029914",
         longitude: "105.853507"
     },
+])
+events = Event.create!([
+    {
+        name: "Trải nghiệm Yosakoi", 
+        description: "Đây là sự kiện diễn ra nhằm giới thiệu cho các em thiếu nhi về 1 nét văn hoá của Nhật Bản", 
+        place_id: 3, 
+        start: Time.now.next_week, 
+        end: Time.now.next_month, 
+        hidden_status: false,
+        age_filter: 1,
+    }, {
+        name: "Dã ngoại ở công viên Thống Nhất", 
+        description: "Với cây xanh và hồ trong sạch, cùng trải nghiệm các hoạt động ngoài trời", 
+        place_id: 1, 
+        start: Time.now.next_week, 
+        end: Time.now.next_month, 
+        hidden_status: false,
+        age_filter: 5,
+    }, {
+        name: "Chương tình xiếc đặc biệt", 
+        description: "Chương trình có sự tham gia của rất nhiều nghệ sĩ xiếc nổi tiếng trong và ngoài nước. Giữa chương trình có các tiết mục biểu diễn hài và ca nhạc. Buổi diễn chỉ bán vé cho các gia đình có con nhỏ", 
+        place_id: 2, 
+        start: Time.now.next_week, 
+        end: Time.now.next_month, 
+        hidden_status: false,
+        age_filter: 6,
+    }
 ])
 events[0].pictures.attach([
     {

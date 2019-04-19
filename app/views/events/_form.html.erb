@@ -35,7 +35,8 @@
   <div class="form-group row">
     <%= form.label :place, :class => "control-label col-sm-2" %>
     <div class="col-sm-10">
-      <%= form.text_field :place, :class => "form-control" %>
+      <%# <%= form.number_field :place_id, :class => "form-control" %> 
+      <%= select("event", "place_id", Place.all.collect {|place| [ place.name, place.id ] }, { include_blank: true }, class: "form-control") %>
     </div>
   </div>
   
