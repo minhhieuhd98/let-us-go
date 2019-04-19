@@ -8,6 +8,7 @@ class Event < ApplicationRecord
     scope :by_hidden_status, -> {where hidden_status: false }
     validates :start, presence: true, date: { after: Proc.new { Date.today + 2 }, message: "must be at least #{(Date.today + 4).strftime("%H:%M %Y/%m/%d").to_s}" }, on: :create
     validates :end, presence: true, date: { after:  :start}
+    belongs_to :place
 
     def all_tags=(names)
         self.tags = names.split(",").map do |name|

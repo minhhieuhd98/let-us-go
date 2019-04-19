@@ -20,7 +20,7 @@
           <% @events.each do |event| %>
             <tr>
               <td><%= event.name %></td>
-              <td><%= event.place %></td>
+              <td><%= event.place.name %></td>
               <td><%= time_format(event.start) %></td>
               <td><%= time_format(event.end) %></td>
               <td><%= link_to 'Show', event, class: "btn btn-info" %></td>

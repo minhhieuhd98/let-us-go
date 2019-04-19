@@ -34,7 +34,7 @@
 
           <p>
             <strong>Place:</strong>
-            <%= @event.place %>
+            <%= link_to @event.place.name, place_path(@event.place) %>
           </p>
 
           <p>
@@ -90,6 +90,30 @@
     </div>
     <div class="col-md-3">
       <%= render('layouts/advertisement') %>
+
+      <h5 class="mt-3">Today and tomorrow's weather</h5>
+      <table class="table table-bordered">
+        <thead>
+          <tr class="text-center">
+            <% @weathers["list"].each do |weather| %>
+                <th><%= place_datetime_format(weather["dt"]) %></th> <%# strptime ở đây %>
+            <% end %>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <% @weathers["list"].each do |weather| %>
+              <td class="text-center">
+                <p>
+                  <%= image_tag 'http://openweathermap.org/img/w/'+weather["weather"][0]["icon"]+'.png', alt: "Weather" %>
+                </p>
+                <p><%= weather["weather"][0]["main"] %></p>
+                <p><%= weather["temp"]["day"] %> &#8451</p>
+              </td>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
