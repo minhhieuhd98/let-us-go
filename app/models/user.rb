@@ -13,5 +13,23 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, 
+         :omniauthable, omniauth_providers: %i[google_oauth2]
+
+  def self.from_omniauth(auth)
+    user = where(uid: auth.info["email"]).first
+    return nil if user.present?
+    User.create(
+                refresh_token: auth.credentials.refresh_token,
+                token: auth.credentials.token,
+                expires_at: Time.at(auth.credentials.expires_at),
+                uid: auth.uid,
+                email: "#{auth.uid}@gmail.com",
+                user_id: user.id,
+                name: name,
+                google_app_id: google_app_id,
+                channel_id: channel_id
+              )
+
+  end
 end
