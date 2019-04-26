@@ -79,12 +79,6 @@ places = Place.create!([
         longitude: "103.6772185",
     },
     {
-        name: "Côn Sơn, Chí Linh",
-        description: "Vùng đất địa linh nhân kiệt!!!",
-        latitude: "21.1492745",
-        longitude: "106.380858",
-    },
-    {
         name: "Đà Lạt",
         description: "Thành Phố của những cặp đôi thích chia tay",
         latitude: "11.9040702",
@@ -97,12 +91,6 @@ places = Place.create!([
         longitude: "105.8729829",
     },
     {
-        name: "Chùa Bái Đính, Ninh Bình",
-        description: "Trung tâm Phật Giáo Việt Nam",
-        latitude: "20.2761587",
-        longitude: "105.8627744",
-    },
-    {
         name: "Tam Đảo, Vĩnh Phúc",
         description: "Không gian mát mẻ, thích hợp những chuyến đi ngắn cuối tuần cùng Gia đình, bạn bè",
         latitude: "21.4553802",
@@ -113,12 +101,6 @@ places = Place.create!([
         description: "Cái nôi của nghề gốm sứ Việt Nam",
         latitude: "20.9761368",
         longitude: "105.9115487",
-    },
-    {
-        name: "Chùa Hương",
-        description: "Du lịch tâm linh",
-        latitude: "20.6189476",
-        longitude: "105.7456026",
     },
     {
         name: "Chùa Một Cột",
@@ -162,6 +144,96 @@ places = Place.create!([
         latitude: "22.3476867",
         longitude: "103.7819187",
     },
+    {
+        name: "Cung Hữu Nghị Việt-Xô",
+        description: "Nơi diễn ra những hoạt động ngày trẻ em 1/6",
+        latitude: "21.0222916",
+        longitude: "105.84205347",
+    },
+    {
+        name: "Phố đi bộ Hà Nội",
+        description: "Nơi diễn ra những hoạt động mới của người dân thủ đô",
+        latitude: "21.029914",
+        longitude: "105.853507",
+    },
+    {
+        name: "Tượng Đài Lý Thái Tổ",
+        description: "Nơi diễn ra những hoạt động mới của người dân thủ đô",
+        latitude: "21.029914",
+        longitude: "105.853507",
+    },
+    {
+        name: "Bảo tàng phòng không-không quân",
+        description: "Bảo tàng lịch sử ngành phòng không, không quân quân đội nhân dân Việt Nam",
+        latitude: "20.9990548",
+        longitude: "105.8268894",
+    },
+    {
+        name: "Hồ Tây",
+        description: "Nơi diễn ra các sự kiện văn hóa của người dân thủ đô",
+        latitude: "21.0580311",
+        longitude: "105.8063122",
+    },
+    {
+        name: "Sân vận động",
+        description: "Nơi diễn ra các trận đấu nhi đồng mùa hè này",
+        latitude: "21.0580311",
+        longitude: "105.8063122",
+    },
+    {
+        name: "Công Viên Nước Hồ Tây",
+        description: "Giải tỏa cơn nóng mùa hè",
+        latitude: "21.0580311",
+        longitude: "105.8063122",
+    },
+    {
+        name: "Công Viên Bách Thảo",
+        description: "Sở Thú Hà Nội",
+        latitude: "21.0305802",
+        longitude: "105.8033129",
+    },
+    {
+        name: "Đại Học Bách Khoa Hà Nội",
+        description: "Trường Đại Học Bách Khoa Hà Nội!",
+        latitude: "21.0051014",
+        longitude: "105.8434403",
+    },
+    {
+        name: "Thung lũng Bản Xôi",
+        description: "Phong cảnh thiên nhiên tuyệt đẹp, thích hợp với những buổi dã ngoại cuối tuần",
+        latitude: "21.0227792",
+        longitude: "104.8598688",
+    },
+    {
+        name: "Khu du lịch Suối Tiên",
+        description: "Cùng trải nghiệm những trò chơi cuối tuần",
+        latitude: "10.8659051",
+        longitude: "106.8007542",
+    },
+    {
+        name: "Đồng Bằng Sông Cửu Long",
+        description: "Vùng đất của Hoa Trái",
+        latitude: "9.1753578",
+        longitude: "105.1171302",
+    },
+    {
+        name: "Sông Hương",
+        description: "Xứ Huệ mộng mơ",
+        latitude: "16.4535435",
+        longitude: "107.5070721",
+    },
+    {
+        name: "Văn Miếu- Quốc Tử Giám",
+        description: "Trường Đại học đầu tiên ở Việt Nam",
+        latitude: "21.0293646",
+        longitude: "105.8339746",
+    },
+    {
+        name: "Hội Lim - Bắc Ninh",
+        description: "Vùng đất quan họ",
+        latitude: "21.1166089",
+        longitude: "105.9594107",
+    },
 #    viet 50 cai place
 ])
 events = Event.create!([
@@ -199,7 +271,7 @@ events = Event.create!([
         age_filter: 6,
     }, {
         name: "Hội Sách Thăng Long",
-        description: "Lễ hội Sách Mùa Xuân",
+        description: "Lễ hội Sách Mùa Xuân, nâng cao văn hóa đọc cho trẻ em",
         place_id: 5,
         start: Time.now.next_week,
         end: Time.now.next_month,
@@ -207,7 +279,7 @@ events = Event.create!([
         age_filter: 6,
     }, {
         name: "Carnaval Du Lịch Hạ Long 2018",
-        description: "Lễ hội của Biển",
+        description: "Lễ hội của Biển chiêm ngưỡng những màn diễu hành đường phố",
         place_id: 6,
         start: Time.now.next_week,
         end: Time.now.next_month,
@@ -230,17 +302,9 @@ events = Event.create!([
         hidden_status: false,
         age_filter: 6,
     }, {
-        name: "Lễ hội Côn Sơn-Kiếp Bạc",
-        description: "Khai mạc lễ hội Côn Sơn Kiếp Bạc, Chí Linh Hải Dương",
-        place_id: 9,
-        start: Time.now.next_week,
-        end: Time.now.next_month,
-        hidden_status: false,
-        age_filter: 6,
-    }, {
         name: "Festival Hoa Đà Lạt",
-        description: "Lễ hội Hoa Đà Lạt 2018",
-        place_id: 10,
+        description: "Lễ hội Hoa Đà Lạt 2018, hòa mình vào những sắc hoa, thiên nhiên Đà Lạt",
+        place_id: 9,
         start: Time.now.next_week,
         end: Time.now.next_month,
         hidden_status: false,
@@ -248,15 +312,7 @@ events = Event.create!([
     }, {
         name: "Festival Du lịch Sầm Sơn",
         description: "Khai mạc Lễ hội Biển Sầm Sơn",
-        place_id: 11,
-        start: Time.now.next_week,
-        end: Time.now.next_month,
-        hidden_status: false,
-        age_filter: 6,
-    }, {
-        name: "Lễ Hội Chùa Bái Đính",
-        description: "Du xuân đầu năm, cầu mong năm mới may mắn",
-        place_id: 12,
+        place_id: 10,
         start: Time.now.next_week,
         end: Time.now.next_month,
         hidden_status: false,
@@ -264,7 +320,7 @@ events = Event.create!([
     }, {
         name: "Cắm trại cùng gia đình ở Tam Đảo",
         description: "Tam Đảo, địa điểm cắm trại lý tưởng cuối tuần",
-        place_id: 13,
+        place_id: 11,
         start: Time.now.next_week,
         end: Time.now.next_month,
         hidden_status: false,
@@ -272,15 +328,7 @@ events = Event.create!([
     }, {
         name: "Trải nghiểm Làm Gốm",
         description: "Những nét đẹp truyền thống cần được giữ gìn",
-        place_id: 14,
-        start: Time.now.next_week,
-        end: Time.now.next_month,
-        hidden_status: false,
-        age_filter: 6,
-    }, {
-        name: "Lễ Hội chùa Hương",
-        description: "Lễ hội lớn nhất đồng bằng sông Hồng",
-        place_id: 15,
+        place_id: 12,
         start: Time.now.next_week,
         end: Time.now.next_month,
         hidden_status: false,
@@ -288,7 +336,7 @@ events = Event.create!([
     }, {
         name: "Tham quan du lịch chùa một cột",
         description: "Địa điểm du lịch văn hóa lịch sử Hà Nội",
-        place_id: 16,
+        place_id: 13,
         start: Time.now.next_week,
         end: Time.now.next_month,
         hidden_status: false,
@@ -296,23 +344,23 @@ events = Event.create!([
     }, {
         name: "ngắm cảnh hồ ba bể",
         description: "Cùng nhau khám phá, thăm quan du lịch sinh thái hồ ba bể",
-        place_id: 17,
+        place_id: 14,
         start: Time.now.next_week,
         end: Time.now.next_month,
         hidden_status: false,
         age_filter: 6,
     },  {
-        name: "Khai mạc du lịch miền Trung",
-        description: "Khai mạc tháng du lịch miền trung",
-        place_id: 18,
+        name: "Lễ hội du lịch miền Trung",
+        description: "Cùng du lịch miền trung, cùng nhau tham quan những bãi tắm mới lạ",
+        place_id: 15,
         start: Time.now.next_week,
         end: Time.now.next_month,
         hidden_status: false,
         age_filter: 6,
     }, {
         name: "Khai mạc pháo hoa quốc tế Đà Nẵng",
-        description: "Sắc đẹp Pháo hoa, cùng chiêm ngưỡng những màn pháo hoa đẹp sắc",
-        place_id: 19,
+        description: "Sắc đẹp Pháo hoa, cùng chiêm ngưỡng những màn pháo hoa đẹp sắc cùng gia đình",
+        place_id: 16,
         start: Time.now.next_week,
         end: Time.now.next_month,
         hidden_status: false,
@@ -320,7 +368,7 @@ events = Event.create!([
     }, {
         name: "Cắm trại Ba Vì",
         description: "Một địa điểm khác cho những chuyến đi du lịch cuối tuần gần Hà Nội",
-        place_id: 20,
+        place_id: 17,
         start: Time.now.next_week,
         end: Time.now.next_month,
         hidden_status: false,
@@ -328,20 +376,135 @@ events = Event.create!([
     }, {
         name: "Trải nghiệm ngắm cảnh mường hoa",
         description: "Cùng bạn bè ngắm cảnh trên cao bằng cáp treo, một trải nghiệm khó quên",
-        place_id: 21,
+        place_id: 18,
         start: Time.now.next_week,
         end: Time.now.next_month,
         hidden_status: false,
         age_filter: 6,
     }, {
         name: "Chợ phiên vùng cao",
-        description: "Cùng nhau đi chợ phiên!",
+        description: "Cùng nhau đi chợ phiên!, hiểu thêm nét văn hóa dân tộc vùng cao",
+        place_id: 19,
+        start: Time.now.next_week,
+        end: Time.now.next_month,
+        hidden_status: false,
+        age_filter: 6,
+    }, {
+        name: "Chương trình dành cho trẻ em",
+        description: "Một chương trình đặc biệt dành cho trẻ em trong ngày quốc tế trẻ em 1/6",
+        place_id: 20,
+        start: Time.now.next_week,
+        end: Time.now.next_month,
+        hidden_status: false,
+        age_filter: 6,
+    }, {
+        name: "Rước đèn trung thu",
+        description: "Rước đèn trung thu quanh hồ Hoàn Kiếm, tạo sân chơi ngoài trời cho trẻ",
+        place_id: 21,
+        start: Time.now.next_week,
+        end: Time.now.next_month,
+        hidden_status: false,
+        age_filter: 6,
+    }, {
+        name: "Ngắm hoa anh đào",
+        description: "Bạn thân và Gia Đình có thể chiêm ngưỡng hoa anh đào ngay tại Hà Nội trong mùa xuân này",
         place_id: 22,
         start: Time.now.next_week,
         end: Time.now.next_month,
         hidden_status: false,
         age_filter: 6,
-    }
+    }, {
+        name: "Tìm hiểu không quân Việt Nam",
+        description: "Nâng cao hiểu biết Lịch Sử cho trẻ",
+        place_id: 23,
+        start: Time.now.next_week,
+        end: Time.now.next_month,
+        hidden_status: false,
+        age_filter: 6,
+    }, {
+        name: "Giao lưu văn hóa Việt-Hàn",
+        description: "Giao lưu văn hóa ẩm thực Hàn Quốc",
+        place_id: 24,
+        start: Time.now.next_week,
+        end: Time.now.next_month,
+        hidden_status: false,
+        age_filter: 6,
+    }, {
+        name: "Giao lưu bóng đá nhi đồng toàn quốc",
+        description: "Giao lưu bóng đá, tăng cường các hoạt động ngoài trời cho trẻ",
+        place_id: 25,
+        start: Time.now.next_week,
+        end: Time.now.next_month,
+        hidden_status: false,
+        age_filter: 6,
+    }, {
+        name: "Công viên nước",
+        description: "Địa điểm không thể thiếu cho con trẻ trong mùa hè",
+        place_id: 26,
+        start: Time.now.next_week,
+        end: Time.now.next_month,
+        hidden_status: false,
+        age_filter: 6,
+    }, {
+        name: "Tham quan sở thú Hà Nội",
+        description: "Cùng con trẻ làm quen với những con vật, một chuyến đi bổ ích dịp cuối tuần",
+        place_id: 27,
+        start: Time.now.next_week,
+        end: Time.now.next_month,
+        hidden_status: false,
+        age_filter: 6,
+    }, {
+        name: "Oshougatsu 2019",
+        description: "Cùng tham gia lễ hội chào đón năm mới tại Nhật Bản",
+        place_id: 28,
+        start: Time.now.next_week,
+        end: Time.now.next_month,
+        hidden_status: false,
+        age_filter: 6,
+    }, {
+        name: "Cắm trại du lịch",
+        description: "Cùng Gia Đình cắm trại dịp cuối tuần",
+        place_id: 29,
+        start: Time.now.next_week,
+        end: Time.now.next_month,
+        hidden_status: false,
+        age_filter: 6,
+    },
+    {
+        name: "Khu du lịch Văn Hóa Suối Tiên",
+        description: "Địa điểm du lịch, chơi trò chơi cho cả gia đình vào dịp ngày lễ",
+        place_id: 30,
+        start: Time.now.next_week,
+        end: Time.now.next_month,
+        hidden_status: false,
+        age_filter: 6,
+    },
+    {
+        name: "Trải nghiệm thực tế cuộc sống miệt vườn miền Tây",
+        description: "Tránh xa những ồn ào của thành phố? Bạn có muốn thử làm người nông dân? Hãy thử và cảm nhận!",
+        place_id: 31,
+        start: Time.now.next_week,
+        end: Time.now.next_month,
+        hidden_status: false,
+        age_filter: 6,
+    },
+    {
+        name: "Nhã Nhạc cung đình",
+        description: "Những nét đẹp truyền thống Việt Nam",
+        place_id: 32,
+        start: Time.now.next_week,
+        end: Time.now.next_month,
+        hidden_status: false,
+        age_filter: 6,
+    }, {
+        name: "Xin chữ đầu năm",
+        description: "Một Nét đẹp văn hóa đầu năm người Việt Nam",
+        place_id: 33,
+        start: Time.now.next_week,
+        end: Time.now.next_month,
+        hidden_status: false,
+        age_filter: 6,
+    },
     # 50 cai event
 ])
 # event tu 0 den 50. moi event them lay 1 anh
@@ -387,61 +550,110 @@ events[7].pictures.attach([
     io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'nam-du-lich-bien-phu-quoc.jpg')),
     filename: 'nam-du-lich-bien-phu-quoc.jpg'
 ])
+
 events[8].pictures.attach([
-    io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'kiep-bac.jpg')),
-    filename: 'kiep-bac.jpg'
-])
-events[9].pictures.attach([
     io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'hoa-da-lat.jpg')),
     filename: 'hoa-da-lat.jpg'
 ])
-events[10].pictures.attach([
+events[9].pictures.attach([
     io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'le-hoi-sam-son.JPG')),
     filename: 'le-hoi-sam-son.JPG'
 ])
-events[11].pictures.attach([
-    io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'du-xuan-dau-nam.jpg')),
-    filename: 'du-xuan-dau-nam.jpg'
-])
-events[12].pictures.attach([
+events[10].pictures.attach([
     io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'cam-trai-tam-dao.jpg')),
     filename: 'cam-trai-tam-dao.jpg'
 ])
-events[13].pictures.attach([
+events[11].pictures.attach([
     io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'trai-nghiem-lam-gom.jpg')),
     filename: 'trai-nghiem-lam-gom.jpg'
 ])
-events[14].pictures.attach([
-    io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'le-hoi-chua-huong.jpg')),
-    filename: 'le-hoi-chua-huong.jpg'
-])
-events[15].pictures.attach([
+events[12].pictures.attach([
     io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'tham-quan-du-lich.jpg')),
     filename: 'tham-quan-du-lich.jpg'
 ])
-events[16].pictures.attach([
+events[13].pictures.attach([
     io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'di-thuyen-tren-ho-ba-be.jpg')),
     filename: 'di-thuyen-tren-ho-ba-be.jpg'
 ])
-events[17].pictures.attach([
+events[14].pictures.attach([
     io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'du-lich-mien-trung.jpg')),
     filename: 'du-lich-mien-trung.jpg'
 ])
-events[18].pictures.attach([
+events[15].pictures.attach([
     io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'phao-hoa.jpg')),
     filename: 'phao-hoa.jpg'
 ])
-events[19].pictures.attach([
+events[16].pictures.attach([
     io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'cam-trai-ba-vi.jpg')),
     filename: 'cam-trai-ba-vi.jpg'
 ])
-events[20].pictures.attach([
+events[17].pictures.attach([
     io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'kham-pha-muong-hoa.jpg')),
     filename: 'kham-pha-muong-hoa.jpg'
 ])
-events[21].pictures.attach([
+events[18].pictures.attach([
     io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'cho-phien.jpg')),
     filename: 'cho-phien.jpg'
+])
+events[19].pictures.attach([
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'quoc-te-thieu-nhi.jpg')),
+    filename: 'quoc-te-thieu-nhi.jpg'
+])
+events[20].pictures.attach([
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'mua-lan.jpg')),
+    filename: 'mua-lan.jpg'
+])
+events[21].pictures.attach([
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'hoa-anh-dao.jpg')),
+    filename: 'hoa-anh-dao.jpg'
+])
+events[22].pictures.attach([
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'tham-quan-bao-tang-phong-khong.Jpeg')),
+    filename: 'tham-quan-bao-tang-phong-khong.Jpeg'
+])
+events[23].pictures.attach([
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'am-thuc-viet-han.jpeg')),
+    filename: 'am-thuc-viet-han.jpeg'
+])
+events[24].pictures.attach([
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'giao-luu-bong-da-nhi-dong.jpg')),
+    filename: 'giao-luu-bong-da-nhi-dong.jpg'
+])
+events[25].pictures.attach([
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'cong-vien-nuoc-ho-tay.jpg')),
+    filename: 'cong-vien-nuoc-ho-tay.jpg'
+])
+events[26].pictures.attach([
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'so-thu-ha-noi.jpg')),
+    filename: 'so-thu-ha-noi.jpg'
+])
+events[27].pictures.attach([
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'hedspi.jpg')),
+    filename: 'hedspi.jpg'
+])
+events[28].pictures.attach([
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'cam-trai.jpg')),
+    filename: 'cam-trai.jpg'
+])
+events[29].pictures.attach([
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'suoi-tien-2.jpg')),
+    filename: 'suoi-tien-2.jpg'
+])
+events[30].pictures.attach([
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'miet-vuon.jpg')),
+    filename: 'miet-vuon.jpg'
+])
+events[31].pictures.attach([
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'nha-nhac-cung-dinh-hue.jpg')),
+    filename: 'nha-nhac-cung-dinh-hue.jpg'
+])
+events[32].pictures.attach([
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'xin-chu.jpg')),
+    filename: 'xin-chu.jpg'
+])
+events[33].pictures.attach([
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'hoi-lim.jpg')),
+    filename: 'hoi-lim.jpg'
 ])
 
 #place tu 0 den. them anh
@@ -479,58 +691,106 @@ places[7].picture.attach(
     filename: 'phu_quoc.jpg',
 )
 places[8].picture.attach(
-    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'KIEPBAC.jpg')),
-    filename: 'KIEPBAC.jpg',
-)
-places[9].picture.attach(
     io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'dalat.jpg')),
     filename: 'dalat.jpg',
 )
-places[10].picture.attach(
+places[9].picture.attach(
     io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'sam-son.jpg')),
     filename: 'sam-son.jpg',
 )
-places[11].picture.attach(
-    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'bai-dinh.jpg')),
-    filename: 'bai-dinh.jpg',
-)
-places[12].picture.attach(
+places[10].picture.attach(
     io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'tam-dao.jpg')),
     filename: 'tam-dao.jpg',
 )
-places[13].picture.attach(
+places[11].picture.attach(
     io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'bat-trang.jpg')),
     filename: 'bat-trang.jpg',
 )
-places[14].picture.attach(
-    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'chua-huong.jpg')),
-    filename: 'chua-huong.jpg',
-)
-places[15].picture.attach(
+places[12].picture.attach(
     io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'chua-mot-c.jpg')),
     filename: 'chua-mot-c.jpg',
 )
-places[16].picture.attach(
+places[13].picture.attach(
     io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'ho-ba-be.jpg')),
     filename: 'ho-ba-be.jpg',
 )
-places[17].picture.attach(
+places[14].picture.attach(
     io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'kinhthanhhue.jpg')),
     filename: 'kinhthanhhue.jpg',
 )
-places[18].picture.attach(
+places[15].picture.attach(
     io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'da-nang.jpg')),
     filename: 'da-nang.jpg',
 )
-places[19].picture.attach(
+places[16].picture.attach(
     io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'ba-vi.jpg')),
     filename: 'ba-vi.jpg',
 )
-places[20].picture.attach(
+places[17].picture.attach(
     io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'muong-hoa.jpg')),
     filename: 'muong-hoa.jpg',
 )
-places[21].picture.attach(
+places[18].picture.attach(
     io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'sapa.jpg')),
     filename: 'sapa.jpg',
+)
+places[19].picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'cung-huu-nghi-viet-xo.jpg')),
+    filename: 'cung-huu-nghi-viet-xo.jpg',
+)
+places[20].picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'ho-hoan-kiem.jpg')),
+    filename: 'ho-hoan-kiem.jpg',
+)
+places[21].picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'ly-thai-to.jpg')),
+    filename: 'ly-thai-to.jpg',
+)
+places[22].picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'bao-tang-phong-khong.jpg')),
+    filename: 'bao-tang-phong-khong.jpg',
+)
+places[23].picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'ho-tay.jpg')),
+    filename: 'ho-tay.jpg',
+)
+places[24].picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'san-van-dong.jpg')),
+    filename: 'san-van-dong.jpg',
+)
+places[25].picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'cong-vien-ho-tay.jpg')),
+    filename: 'cong-vien-ho-tay.jpg',
+)
+places[26].picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'cong-vien-thu-le.jpg')),
+    filename: 'cong-vien-thu-le.jpg',
+)
+places[27].picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'hust.jpg')),
+    filename: 'hust.jpg',
+)
+places[28].picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'ban-xoi.jpg')),
+    filename: 'ban-xoi.jpg',
+)
+places[29].picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'suoi-tien.jpg')),
+    filename: 'suoi-tien.jpg',
+)
+places[30].picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'mien-tay.png')),
+    filename: 'mien-tay.png',
+)
+places[31].picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'kinhthanhhue.jpg')),
+    filename: 'kinhthanhhue.jpg',
+)
+places[32].picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'Van-Mieu-2.jpg')),
+    filename: 'Van-Mieu-2.jpg',
+)
+places[33].picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'bac-ninh.png')),
+    filename: 'bac-ninh.png',
 )
