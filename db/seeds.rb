@@ -312,6 +312,12 @@ places = Place.create!([
         latitude: "21.011816",
         longitude: "105.843592",
     },
+    {
+        name: "Bảo tàng lịch sử",
+        description: "Nơi lưu giữ những hiện vật lịch sử",
+        latitude: "21.011816",
+        longitude: "105.843592",
+    },
 #    viet 50 cai place
 ])
 events = Event.create!([
@@ -696,6 +702,14 @@ events = Event.create!([
         end: Time.now.next_month,
         hidden_status: false,
         age_filter: 6,
+    }, {
+        name: "Tìm hiểu lịch sử Việt Nam",
+        description: "Dân ta phải biết sử ta...",
+        place_id: 48,
+        start: Time.now.next_week,
+        end: Time.now.next_month,
+        hidden_status: false,
+        age_filter: 6,
     },
     # 50 cai event
 ])
@@ -903,6 +917,10 @@ events[46].pictures.attach([
     io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'vui-choi-ngoai-troi.jpg')),
     filename: 'vui-choi-ngoai-troi.jpg'
 ])
+events[47].pictures.attach([
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'events', 'bao-tang-lich-su.jpg')),
+    filename: 'bao-tang-lich-su.jpg'
+])
 
 #place tu 0 den. them anh
 #anh va su kien lay o iko-yo
@@ -995,8 +1013,8 @@ places[21].picture.attach(
     filename: 'ly-thai-to.jpg',
 )
 places[22].picture.attach(
-    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'bao-tang-phong-khong.jpg')),
-    filename: 'bao-tang-phong-khong.jpg',
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'bao-tang-khong-quan.jpg')),
+    filename: 'bao-tang-khong-quan.jpg',
 )
 places[23].picture.attach(
     io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'ho-tay.jpg')),
@@ -1093,4 +1111,8 @@ places[45].picture.attach(
 places[46].picture.attach(
     io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'cong-vien-yen-so.jpg')),
     filename: 'cong-vien-yen-so.jpg',
+)
+places[47].picture.attach(
+    io: File.open(Rails.root.join('app', 'assets', 'images', 'places', 'bao-tang-lích-su.png')),
+    filename: 'bao-tang-lich-su.png',
 )
